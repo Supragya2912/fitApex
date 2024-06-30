@@ -5,29 +5,29 @@ import { BlurView } from '@react-native-community/blur';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '../types/navigation';
 
-const backgroundImage = require('../assets/login.jpg');
+const backgroundImage = require('../assets/register.jpg');
 
-const LoginScreen = () => {
-    
+const SignUpScreen = () => {
     const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     return (
         <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-            <BlurView style={styles.absolute} blurType="prominent" blurAmount={2} />
+            <BlurView style={styles.absolute} blurType="prominent" blurAmount={1} />
             <View style={styles.container}>
                 <LinearGradient
                     colors={['rgb(58,66,66)', 'rgb(73,70,69)']}
                     style={styles.card}
                 >
-                    <Text style={styles.title}>Login to FitApex</Text>
+                    <Text style={styles.title}>Sign Up</Text>
                     <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#ccc" />
                     <TextInput style={styles.input} placeholder="Password" placeholderTextColor="#ccc" secureTextEntry={true} />
+                    <TextInput style={styles.input} placeholder="Confirm Password" placeholderTextColor="#ccc" secureTextEntry={true} />
                     <TouchableOpacity style={styles.button} onPress={() => { }}>
-                        <Text style={styles.buttonText}>Login</Text>
+                        <Text style={styles.buttonText}>Sign Up</Text>
                     </TouchableOpacity>
                     <View style={styles.insideContainer}>
-                        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-                            <Text style={styles.linkText}>Sign Up</Text>
+                        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                            <Text style={styles.linkText}>Login</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => { }}>
                             <Text style={styles.linkText}>Reset password</Text>
@@ -109,4 +109,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LoginScreen;
+export default SignUpScreen;
