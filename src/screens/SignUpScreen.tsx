@@ -8,6 +8,7 @@ import { RootStackParamList } from '../types/navigation';
 const backgroundImage = require('../assets/register.jpg');
 
 const SignUpScreen = () => {
+
     const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     return (

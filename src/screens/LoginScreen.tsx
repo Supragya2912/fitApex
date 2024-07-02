@@ -8,7 +8,7 @@ import { RootStackParamList } from '../types/navigation';
 const backgroundImage = require('../assets/login.jpg');
 
 const LoginScreen = () => {
-    
+
     const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     return (
@@ -22,7 +22,7 @@ const LoginScreen = () => {
                     <Text style={styles.title}>Login to FitApex</Text>
                     <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#ccc" />
                     <TextInput style={styles.input} placeholder="Password" placeholderTextColor="#ccc" secureTextEntry={true} />
-                    <TouchableOpacity style={styles.button} onPress={() => { }}>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('BottomNavigator')}>
                         <Text style={styles.buttonText}>Login</Text>
                     </TouchableOpacity>
                     <View style={styles.insideContainer}>
